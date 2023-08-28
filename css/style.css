@@ -133,5 +133,5 @@ input[type=text]:focus {
 }
 
 .links a:hover{
-    border: solid 1px white;
+    border: solid 1px white ;
 }
