@@ -13,22 +13,24 @@ window.onclick = function (e) {
 
 const products = [
   {
+    id: "1111-3333",
     image: "images/download (6).jpg",
     name: "Apple Air Tag",
     rating: {
       stars: 4.5,
       count: 87,
     },
-    price: "23$",
+    priceCents: "2344",
   },
   {
+    id: "1212-1111",
     image: "images/download (7).jpg",
     name: "Apple Airpods Pro 2",
     rating: {
       stars: 4.5,
       count: 87,
     },
-    price: "120$",
+    priceCents: "12033",
   },
   {
     image: "images/61+Al0YynpL.jpg",
@@ -37,70 +39,77 @@ const products = [
       stars: 4.5,
       count: 87,
     },
-    price: "195.44$",
+    priceCents: "19444",
   },
   {
+    id: "7675-1231",
     image: "images/61YXnbbNrgL._AC_UL600_FMwebp_QL65_.webp",
     name: "Fitbit Charge 5",
     rating: {
       stars: 4.5,
       count: 87,
     },
-    price: "195.44$",
+    priceCents: "1955",
   },
   {
+    id: "4345-1321",
     image: "images/download (7).jpg",
     name: "Apple Airpods Pro 2",
     rating: {
       stars: 4.5,
       count: 87,
     },
-    price: "120$",
+    priceCents: "12034",
   },
   {
+    id: "9865-2345",
     image: "images/download (7).jpg",
     name: "Apple Airpods Pro 2",
     rating: {
       stars: 4.5,
       count: 87,
     },
-    price: "120$",
+    priceCents: "12022",
   },
   {
+    id: "7574-2321",
     image: "images/download (7).jpg",
     name: "Apple Airpods Pro 2",
     rating: {
       stars: 4.5,
       count: 87,
     },
-    price: "120$",
+    priceCents: "1202",
   },
   {
+    id: "4356-3213",
     image: "images/download (7).jpg",
     name: "Apple Airpods Pro 2",
     rating: {
       stars: 4.5,
       count: 87,
     },
-    price: "120$",
+    priceCents: "2000",
   },
   {
+    id: "3343-1213",
     image: "images/download (7).jpg",
     name: "Apple Airpods Pro 2",
     rating: {
       stars: 4.5,
       count: 87,
     },
-    price: "120$",
+    priceCents: "1200",
   },
   {
+    id: "1234-3213",
     image: "images/download (7).jpg",
     name: "Apple Airpods Pro 2",
     rating: {
       stars: 4.5,
       count: 87,
     },
-    price: "120$",
+    priceCents: "12022",
   },
 ];
 
@@ -120,7 +129,7 @@ products.forEach((product) => {
 
       <div class="product-rating-container">
         <img class="product-rating-stars"
-          src="images/ratings/rating-${product.rating.stars * 10}.png">
+          src="images/rating-${product.rating.stars * 10}.png">
         <div class="product-rating-count link-primary">
           ${product.rating.count}
         </div>
@@ -162,8 +171,35 @@ products.forEach((product) => {
 
 document.getElementById("main").innerHTML = productsHtml;
 
-document.querySelectorAll(".addtocartbutton").forEach((button) => {
+let matchingitem;
+document.querySelectorAll(".js-add-to-cart").forEach((button) => {
   button.addEventListener("click", () => {
-    console.log("added product");
+    const productId = button.dataset.productId;
+
+    let matchingItem;
+
+    cart.forEach((item) => {
+      if (productId === item.productId) {
+        matchingItem = item;
+      }
+    });
+
+    if (matchingItem) {
+      matchingItem.quantity += 1;
+    } else {
+      cart.push({
+        productId: productId,
+        quantity: 1,
+      });
+    }
+
+    let cartQuantity = 0;
+
+    cart.forEach((item) => {
+      cartQuantity += item.quantity;
+    });
+
+    console.log(cart);
+    document.getElementById("number").innerHTML = cartQuantity;
   });
 });

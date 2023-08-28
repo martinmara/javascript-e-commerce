@@ -135,3 +135,10 @@ input[type=text]:focus {
 .links a:hover{
     border: solid 1px white ;
 }
+
+
+@media (max-width: 800px) {
+    .searchbar input{
+        width: 200px;
+    }
+}
