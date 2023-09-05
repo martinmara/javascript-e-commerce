@@ -1,5 +1,5 @@
 import { products } from "../data-modules/products.js";
-import { cart6 } from "../data-modules/cart.js";
+import { cart } from "../data-modules/cart.js";
 let productsHtml = ``;
 
 products.forEach((product) => {
