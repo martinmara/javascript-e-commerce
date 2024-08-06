@@ -34,6 +34,7 @@ function renderCart() {
           </div>
           <div class="cart-item-details">
             <div class="cart-item-name">${product.name}</div>
+            <div class="cart-item-description">${product.description}</div>
             <div class="cart-item-price">$${(product.priceCents / 100).toFixed(
               2
             )}</div>

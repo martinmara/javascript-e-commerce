@@ -13,6 +13,7 @@ products.forEach((product) => {
       <div class="product-name limit-text-to-2-lines">
         ${product.name}
       </div>
+        <div class="cart-item-description">${product.description}</div>
 
       <div class="product-rating-container">
         <img class="product-rating-stars" src="images/ratings/rating-${

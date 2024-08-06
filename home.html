@@ -55,11 +55,12 @@
 
         <div class="nav-bshop">
 
-            <div class="links">
-                <div class="menucontainer">
-                    <button style="background-color: transparent; cursor: pointer;" onclick="showMenu()"><i
-                            class="fa-solid fa-bars" style="color: white;"></i></button>
-                </div>
+
+            <div class="menucontainer">
+                <button style="background-color: transparent; cursor: pointer;" onclick="showMenu()"><i
+                        class="fa-solid fa-bars" style="color: white;"></i></button>
+            </div>
+            <div class="links" id="links">
                 <a href="#">Today's Deals</a>
                 <a href="#">Customer Service</a>
                 <a href="#">Registry</a>
@@ -91,6 +92,8 @@
             window.location.href = `../pages/search.html?query=${encodeURIComponent(query)}`;
         });
     </script>
+
+    <script src="./javascript/menu.js"></script>
 
 </body>
 
