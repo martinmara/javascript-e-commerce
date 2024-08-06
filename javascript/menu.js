@@ -6,5 +6,3 @@ function showMenu() {
     links.style.display = "none";
   }
 }
-
-function myFunction() {}

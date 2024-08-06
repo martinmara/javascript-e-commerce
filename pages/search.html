@@ -44,20 +44,22 @@
                     </div>
                 </div>
             </div>
-            <div class="cartcontainer">
-                <a href="/pages/checkout.html" onclick="renderCart()"><i id="number"
+            <div class="cartcontainer" id="cart-hover">
+                <a href="/pages/checkout.html" onclick="renderCart()" onmouseover="showCart()"><i id="number"
                         class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"><span
                             class="js-cart-quantity"></span></i>cart</a>
             </div>
+            <div class="cart-menu" id="cart-menu"></div>
         </div>
 
         <div class="nav-bshop">
 
-            <div class="links">
-                <div class="menucontainer">
-                    <button style="background-color: transparent; cursor: pointer;" onclick="showMenu()"><i
-                            class="fa-solid fa-bars" style="color: white;"></i></button>
-                </div>
+
+            <div class="menucontainer">
+                <button style="background-color: transparent; cursor: pointer;" onclick="showMenu()"><i
+                        class="fa-solid fa-bars" style="color: white;"></i></button>
+            </div>
+            <div class="links" id="links">
                 <a href="#">Today's Deals</a>
                 <a href="#">Customer Service</a>
                 <a href="#">Registry</a>
@@ -71,6 +73,12 @@
     </div>
     <script type="module" src="../javascript/search.js"></script>
     <script src="https://kit.fontawesome.com/f844d2e5f5.js" crossorigin="anonymous"></script>
+    <script type="module">
+        document.getElementById("search-button").addEventListener("click", () => {
+            const query = document.getElementById("search-input").value;
+            window.location.href = `../pages/search.html?query=${encodeURIComponent(query)}`;
+        });
+    </script>
 </body>
 
 </html>

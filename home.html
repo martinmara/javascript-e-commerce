@@ -9,6 +9,9 @@
     <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/productgrid.css">
+    <link rel="stylesheet" href="./css/cart-hover.css">
+
+    <link rel="stylesheet" href="./css/hero.css">
 </head>
 
 <body>
@@ -45,9 +48,9 @@
                     </div>
                 </div>
             </div>
-            <div class="cartcontainer">
-                <a href="/pages/checkout.html" onmouseover=" hoverCart()" onclick="renderCart()" id="cart-hover"><i
-                        id="number" class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"><span
+            <div class="cartcontainer" id="cart-hover">
+                <a href="/pages/checkout.html" onclick="renderCart()" onmouseover="showCart()"><i id="number"
+                        class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"><span
                             class="js-cart-quantity"></span></i>cart</a>
             </div>
             <div class="cart-menu" id="cart-menu"></div>
@@ -69,7 +72,25 @@
             </div>
         </div>
     </header>
+    <section class="hero-section" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Your Product's Name</h1>
+                <p>Discover the amazing features of this product and how it can enhance your life.</p>
+                <a href="#buy-now" class="cta-button">Buy Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="./images/image-removebg-preview (10).png" alt="Product Image">
+            </div>
+        </div>
+    </section>
+
+
+    <div class="featured-products">
+        <h1>Featured Products</h1>
+    </div>
     <div class="main">
+
         <div id="main" class="products-grid js-products-grid">
         </div>
     </div>
@@ -94,6 +115,8 @@
     </script>
 
     <script src="./javascript/menu.js"></script>
+    <script src="./javascript/cart-hover.js" type="module"></script>
+    <script src="./javascript/hero.js" type="module"></script>
 
 </body>
 

@@ -3,7 +3,15 @@ body {
   padding: 0;
 }
 
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
 .topbar {
+
   height: 80px;
   display: flex;
   align-items: center;
@@ -13,7 +21,7 @@ body {
 }
 
 .logocontainer img {
-  width: 150px;
+  width: 100px;
 }
 
 .navlocation:hover {
@@ -31,7 +39,7 @@ body {
 
 .cartcontainer {
   margin-top: 20px;
-  width: 100px;
+  width: 200px;
 }
 
 .cartcontainer a {
@@ -274,5 +282,6 @@ footer:hover {
 .links {
   display: none; 
 }
+
 
 
