@@ -1,13 +1,13 @@
 import { products } from "../data-modules/products.js";
-import { cart } from "../data-modules/cart.js";
+import { addToCart, cart } from "../data-modules/cart.js";
+
 let productsHtml = ``;
 
 products.forEach((product) => {
   productsHtml += `
-      <div class="product-container">
+    <div class="product-container">
       <div class="product-image-container">
-        <img class="product-image"
-          src="${product.image}">
+        <img class="product-image" src="${product.image}">
       </div>
 
       <div class="product-name limit-text-to-2-lines">
@@ -15,8 +15,9 @@ products.forEach((product) => {
       </div>
 
       <div class="product-rating-container">
-        <img class="product-rating-stars"
-          src="images/rating-${product.rating.stars * 10}.png">
+        <img class="product-rating-stars" src="images/ratings/rating-${
+          product.rating.stars * 10
+        }.png">
         <div class="product-rating-count link-primary">
           ${product.rating.count}
         </div>
@@ -27,17 +28,10 @@ products.forEach((product) => {
       </div>
 
       <div class="product-quantity-container">
-        <select>
-          <option selected value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
+        <select class="js-product-quantity" data-product-id="${product.id}">
+          ${[...Array(10).keys()]
+            .map((i) => `<option value="${i + 1}">${i + 1}</option>`)
+            .join("")}
         </select>
       </div>
 
@@ -48,8 +42,9 @@ products.forEach((product) => {
         Added
       </div>
 
-      <button class="add-to-cart-button button-primary js-add-to-cart"
-      data-product-id="${product.id}">
+      <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id="${
+        product.id
+      }">
         Add to Cart
       </button>
     </div>
@@ -58,35 +53,29 @@ products.forEach((product) => {
 
 document.getElementById("main").innerHTML = productsHtml;
 
-let matchingitem;
+function updateCartQuantity() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let cartQuantity = 0;
+
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+
+  document.querySelector(".js-cart-quantity").innerText = cartQuantity;
+}
+
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (event) => {
     const productId = button.dataset.productId;
+    const quantitySelect = document.querySelector(
+      `.js-product-quantity[data-product-id="${productId}"]`
+    );
+    const quantity = parseInt(quantitySelect.value);
 
-    let matchingItem;
-
-    cart.forEach((item) => {
-      if (productId === item.productId) {
-        matchingItem = item;
-      }
-    });
-
-    if (matchingItem) {
-      matchingItem.quantity += 1;
-    } else {
-      cart.push({
-        productId: productId,
-        quantity: 1,
-      });
-    }
-
-    let cartQuantity = 0;
-
-    cart.forEach((item) => {
-      cartQuantity += item.quantity;
-    });
-
-    console.log(cart);
-    document.getElementById("number").innerHTML = cartQuantity;
+    addToCart(productId, quantity);
+    updateCartQuantity();
   });
 });
+
+// Initial cart quantity update
+updateCartQuantity();

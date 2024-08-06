@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Checkout</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/shared/general.css">
-    <link rel="stylesheet" href="styles/pages/checkout/checkout-header.css">
-    <link rel="stylesheet" href="../css/checkout.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/productgrid.css">
 </head>
 
 <body>
@@ -18,7 +16,7 @@
     <header>
         <div class="topbar">
             <div class="logocontainer">
-                <a href="../home.html"><img src="/images/logo.png" alt="E-commerce"></a>
+                <a href="home.html"><img src="./images/logo.png" alt="E-commerce"></a>
             </div>
             <div class="navlocation">
                 <div class="locationcontainer" style="max-width: 100px; ">
@@ -32,7 +30,7 @@
                 <input type="text" id="search-input" placeholder="Search for products...">
                 <button id="search-button">Search</button>
             </div>
-
+            <div id="checkoutcontainer"></div>
 
             <div class="signincontainer">
                 <a href="#signin">Hello'sign in</a>
@@ -48,10 +46,11 @@
                 </div>
             </div>
             <div class="cartcontainer">
-                <a href="/pages/checkout.html" onclick="renderCart()"><i class="fa-solid fa-cart-shopping fa-2xl"
-                        style="color: #ffffff;"><span class="js-cart-quantity"></span>
-                    </i>cart</a>
+                <a href="/pages/checkout.html" onmouseover=" hoverCart()" onclick="renderCart()" id="cart-hover"><i
+                        id="number" class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"><span
+                            class="js-cart-quantity"></span></i>cart</a>
             </div>
+            <div class="cart-menu" id="cart-menu"></div>
         </div>
 
         <div class="nav-bshop">
@@ -69,19 +68,30 @@
             </div>
         </div>
     </header>
+    <div class="main">
+        <div id="main" class="products-grid js-products-grid">
+        </div>
+    </div>
+
+    </div>
 
 
-    <div id="checkoutcontainer"></div>
 
-    <script type="module" src="../javascript/checkout.js"></script>
-    <script type="module" src="../data-modules/cart.js"></script>
+    <footer>
+        <div class="backtotopconatainer">
+            <a href="">Back to top</a>
+        </div>
+    </footer>
+    <script type="module" src="javascript/index.js"></script>
     <script src="https://kit.fontawesome.com/f844d2e5f5.js" crossorigin="anonymous"></script>
+    <script src="./javascript/checkout.js"></script>
     <script type="module">
         document.getElementById("search-button").addEventListener("click", () => {
             const query = document.getElementById("search-input").value;
             window.location.href = `../pages/search.html?query=${encodeURIComponent(query)}`;
         });
     </script>
+
 </body>
 
 </html>

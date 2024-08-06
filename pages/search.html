@@ -4,11 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/css/productgrid.css">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/productgrid.css">
 </head>
 
 <body>
@@ -16,7 +14,7 @@
     <header>
         <div class="topbar">
             <div class="logocontainer">
-                <a href="#Home"><img src="/images/Untitled design (23).png" alt="E-commerce"></a>
+                <a href="../home.html"><img src="../images/logo.png" alt="E-commerce"></a>
             </div>
             <div class="navlocation">
                 <div class="locationcontainer" style="max-width: 100px; ">
@@ -26,13 +24,12 @@
                     <a href="" style="text-decoration: none; color: white; font-weight: 400;">Albania</a>
                 </div>
             </div>
-            <div class="searchcontainer">
-                <div class="searchbar" style="max-height: 40px;">
-                    <input placeholder="Search..." type="text"> <button style="height: 40px; background-color: orange;">
-                        <i class="fas fa-search" aria-hidden="true"></i>
-                    </button>
-                </div>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search for products...">
+                <button id="search-button">Search</button>
             </div>
+            <div id="checkoutcontainer"></div>
+
             <div class="signincontainer">
                 <a href="#signin">Hello'sign in</a>
                 <div class="dropdown">
@@ -47,9 +44,9 @@
                 </div>
             </div>
             <div class="cartcontainer">
-                <a href="/pages/checkout.html"><i id="number" class="fa-solid fa-cart-shopping fa-2xl"
-                        style="color: #ffffff;"></i>cart</a>
-                <span></span>
+                <a href="/pages/checkout.html" onclick="renderCart()"><i id="number"
+                        class="fa-solid fa-cart-shopping fa-2xl" style="color: #ffffff;"><span
+                            class="js-cart-quantity"></span></i>cart</a>
             </div>
         </div>
 
@@ -68,23 +65,11 @@
             </div>
         </div>
     </header>
-    <div class="main">
-        <div id="main" class="products-grid js-products-grid">
-        </div>
+    <div id="search-results-container">
+        <div id="search-results"></div>
     </div>
-
-    </div>
-
-
-
-    <footer>
-        <div class="backtotopconatainer">
-            <a href="">Back to top</a>
-        </div>
-    </footer>
-    <script type="module" src="javascript/index.js"></script>
+    <script type="module" src="../javascript/search.js"></script>
     <script src="https://kit.fontawesome.com/f844d2e5f5.js" crossorigin="anonymous"></script>
-
 </body>
 
 </html>
