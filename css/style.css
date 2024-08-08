@@ -1,6 +1,9 @@
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header{
@@ -165,27 +168,8 @@ header{
   outline: none;
 }
 
-footer {
-  background-color: #37475A;
-  cursor: pointer;
-}
 
-.backtotopconatainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-}
 
-footer:hover {
-  background-color: rgb(66, 66, 66);
-}
-
-.backtotopconatainer a {
-  text-decoration: none;
-  color: black;
-  text-align: center;
-}
 
 /* Responsive styles */
 @media (max-width: 1200px) {

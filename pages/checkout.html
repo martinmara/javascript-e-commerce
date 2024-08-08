@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/pages/checkout/checkout-header.css">
     <link rel="stylesheet" href="../css/checkout.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
@@ -73,6 +74,47 @@
 
     <div id="checkoutcontainer"></div>
 
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-section">
+                <h3>Customer Services</h3>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Report Abuse</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Buy</h3>
+                <ul>
+                    <li><a href="#">All Categories</a></li>
+                    <li><a href="#">Buyer Protection</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Sell On Our Website</h3>
+                <ul>
+                    <li><a href="#">Supplier Membership</a></li>
+                    <li><a href="#">Learning Center</a></li>
+                    <li><a href="#">Partner Program</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Payment Methods</h3>
+                <div class="payment-options">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Your Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <script type="module" src="../javascript/checkout.js"></script>
     <script type="module" src="../data-modules/cart.js"></script>
     <script src="https://kit.fontawesome.com/f844d2e5f5.js" crossorigin="anonymous"></script>
@@ -82,6 +124,8 @@
             window.location.href = `../pages/search.html?query=${encodeURIComponent(query)}`;
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+
 </body>
 
 </html>

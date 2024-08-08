@@ -7,6 +7,7 @@
     <title>Search Results</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/productgrid.css">
+    <link rel="stylesheet" href="../css/footer.css">
 
 </head>
 
@@ -71,14 +72,56 @@
     <div id="search-results-container">
         <div id="search-results"></div>
     </div>
-    <script type="module" src="../javascript/search.js"></script>
-    <script src="https://kit.fontawesome.com/f844d2e5f5.js" crossorigin="anonymous"></script>
-    <script type="module">
-        document.getElementById("search-button").addEventListener("click", () => {
-            const query = document.getElementById("search-input").value;
-            window.location.href = `../pages/search.html?query=${encodeURIComponent(query)}`;
-        });
-    </script>
+    <footer class="footer">
+        <footer class="footer">
+            <div class="footer-top">
+                <div class="footer-section">
+                    <h3>Customer Services</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Report Abuse</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Buy</h3>
+                    <ul>
+                        <li><a href="#">All Categories</a></li>
+                        <li><a href="#">Buyer Protection</a></li>
+                        <li><a href="#">Wholesale</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Sell On Our Website</h3>
+                    <ul>
+                        <li><a href="#">Supplier Membership</a></li>
+                        <li><a href="#">Learning Center</a></li>
+                        <li><a href="#">Partner Program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Payment Methods</h3>
+                    <div class="payment-options">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                            alt="Mastercard">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Website. All Rights Reserved.</p>
+            </div>
+        </footer>
+        <script type="module" src="../javascript/search.js"></script>
+        <script src="https://kit.fontawesome.com/f844d2e5f5.js" crossorigin="anonymous"></script>
+        <script type="module">
+            document.getElementById("search-button").addEventListener("click", () => {
+                const query = document.getElementById("search-input").value;
+                window.location.href = `../pages/search.html?query=${encodeURIComponent(query)}`;
+            });
+        </script>
 </body>
 
 </html>
